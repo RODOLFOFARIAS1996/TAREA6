@@ -1,0 +1,436 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #FF4500;
+    color: white;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.get-consultant {
+    background-color: white;
+    color: #FF4500;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.get-consultant:hover {
+    background-color: #f0f0f0;
+}
+
+/* Main content styles */
+main {
+    padding: 60px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+    position: relative;
+}
+
+.card-icon {
+    position: absolute;
+    top: -25px;
+    right: 25px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.card-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-footer span {
+    font-weight: 500;
+}
+
+.read-more-btn {
+    background-color: #FF4500;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #E03E00;
+}
+
+/* Scroll to top button */
+.scroll-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #FF4500;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.scroll-top:hover {
+    background-color: #E03E00;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    /* Header mobile styles */
+    header {
+        padding: 15px 0;
+    }
+
+    header .container {
+        flex-direction: row; /* Cambiado de column a row */
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .logo span {
+        font-size: 24px;
+    }
+
+    /* Ocultar navegación en móvil */
+    nav, .get-consultant {
+        display: none;
+    }
+
+    /* Agregar botón de menú hamburguesa */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    /* Main content mobile styles */
+    main {
+        padding: 20px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+
+    .card-image {
+        height: 200px;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-icon {
+        top: -20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+
+    .card-icon img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .card-content h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .card-content p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .card-footer {
+        align-items: center;
+    }
+
+    .card-footer span {
+        font-size: 14px;
+    }
+
+    .read-more-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Footer mobile styles */
+    footer {
+        text-align: center;
+        padding: 20px 15px;
+        background-color: #f5f5f5;
+    }
+
+    footer p {
+        margin: 5px 0;
+        color: #666;
+        font-size: 14px;
+    }
+
+    /* Scroll to top button mobile */
+    .scroll-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    /* Header mobile styles */
+    header {
+        padding: 15px 0;
+    }
+
+    header .container {
+        flex-direction: row; /* Cambiado de column a row */
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .logo span {
+        font-size: 24px;
+    }
+
+    /* Ocultar navegación en móvil */
+    nav, .get-consultant {
+        display: none;
+    }
+
+    /* Agregar botón de menú hamburguesa */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    /* Main content mobile styles */
+    main {
+        padding: 20px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+
+    .card-image {
+        height: 200px;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-icon {
+        top: -20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+
+    .card-icon img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .card-content h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .card-content p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .card-footer {
+        align-items: center;
+    }
+
+    .card-footer span {
+        font-size: 14px;
+    }
+
+    .read-more-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+   
+
+    /* Scroll to top button mobile */
+    .scroll-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+}
